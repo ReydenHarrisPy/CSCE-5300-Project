@@ -1,4 +1,4 @@
-customer_name,customer_lastname,credit_score,account_ID,age
+customer_ID,customer_lastname,credit_score,account_ID,age
 36366026,Richards,581,10059824,30
 30865456,Robinson,582,10059825,36
 38783708,Carter,583,10059826,35
