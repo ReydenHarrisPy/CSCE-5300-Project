@@ -12,7 +12,7 @@ Business_Account_Password = 'jibsyfxxyrecmbjl'
 
 # Function to create and send an email
 def email():
-    with open('Customer_Data.csv') as csv_file:
+    with open('balance_information.csv') as csv_file:
         file = csv.reader(csv_file, delimiter=',')
         i = 0
         # Connecting to the mail server
@@ -29,7 +29,7 @@ def email():
             if i > 0:
                 to = [row[4]]
                 body = "Hi" + str(row[1]) + ",\n\n" \
-                       + "Thanks for banking with ous here is your montly motgage status report\n\nAccount_ID: " \
+                       + "Thanks for banking with ous here is your monthly motgage status report\n\nAccount_ID: " \
                        + str(row[0]) \
                        + "\n\nOutstanding Balance: " \
                        + str(row[2]) \
