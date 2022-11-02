@@ -1,0 +1,31 @@
+--create keyspace for work with tables. 
+create keyspace eaglecu with replication = {'class':'SimpleStrategy','replication_factor':3};
+
+USE eaglecu;
+
+--create cutomer table
+create table eaglecu.customers (
+customer_ID int, 
+customer_lastname text, 
+credit_score int, 
+account_ID int, 
+email text,
+PRIMARY KEY (customer_ID))
+WITH CLUSTERING ORDER BY (customer_ID DESC);
+
+--load data into customers table
+copy customers (customer_ID, customer_lastname, credit_score, account_ID, email) from '<sourcefilepath>' WITH DELIMITER=',' and Header = TRUE;
+
+
+--create balances TABLE
+create table eaglecu.balances (
+customer_ID int, 
+customer_lastname text, 
+balance int,
+recent_transaction date,
+account_ID int, 
+PRIMARY KEY (employee_ID)
+WITH CLUSTERING ORDER BY (employee_ID DESC);
+
+--load data into balances table
+copy customers (customer_ID, customer_lastname, balance, recent_transaction, account_ID) from '<sourcefilepath>' WITH DELIMITER=',' and Header = TRUE;
