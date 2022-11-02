@@ -30,7 +30,7 @@ date = date.today()
 s = str(temp_name) + str(date) + '.csv'
 
 # Creating a csv file with preprocessed data
-x.to_csv(s)
+x.to_csv(s, index=False)
 
 
 
